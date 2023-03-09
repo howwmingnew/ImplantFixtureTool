@@ -1,0 +1,89 @@
+﻿<UserControl
+  x:Class="ImplantTemplate.ImplantSystemItem" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+  xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:implanttemplate="clr-namespace:ImplantTemplate" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+  d:DesignHeight="120" d:DesignWidth="120" mc:Ignorable="d">
+    <UserControl.Resources>
+        <DrawingImage x:Key="ensarija_Star_soft_edgesDrawingImage">
+            <DrawingImage.Drawing>
+                <DrawingGroup ClipGeometry="M0,0 V100 H100 V0 H0 Z">
+                    <DrawingGroup Opacity="1">
+                        <GeometryDrawing Geometry="F0 M100,100z M0,0z M36.536,32.822C49.235,0.966000000000001 49.706,1.088 62.892,31.761 97.042,33.959 102.28,41.383 69.405,55.693 89.226,101.74 68.613,84.076 49.563,68.871 27.205,93.884 20.022,91.51 30.781,56.753 23.499,48.252 -14.314,38.012 36.536,32.822z">
+                            <GeometryDrawing.Brush>
+                                <SolidColorBrush Opacity="0.8" Color="#FFFFFF00" />
+                            </GeometryDrawing.Brush>
+                            <GeometryDrawing.Pen>
+                                <Pen
+                                  EndLineCap="Round" LineJoin="Round" StartLineCap="Round"
+                                  Thickness="5">
+                                    <Pen.Brush>
+                                        <SolidColorBrush Opacity="0.8" Color="#FF000000" />
+                                    </Pen.Brush>
+                                </Pen>
+                            </GeometryDrawing.Pen>
+                        </GeometryDrawing>
+                    </DrawingGroup>
+                </DrawingGroup>
+            </DrawingImage.Drawing>
+        </DrawingImage>
+        <DrawingImage x:Key="ensarija_HollowStar_soft_edgesDrawingImage">
+            <DrawingImage.Drawing>
+                <DrawingGroup ClipGeometry="M0,0 V100 H100 V0 H0 Z">
+                    <DrawingGroup Opacity="1">
+                        <GeometryDrawing Geometry="F0 M100,100z M0,0z M36.536,32.822C49.235,0.966000000000001 49.706,1.088 62.892,31.761 97.042,33.959 102.28,41.383 69.405,55.693 89.226,101.74 68.613,84.076 49.563,68.871 27.205,93.884 20.022,91.51 30.781,56.753 23.499,48.252 -14.314,38.012 36.536,32.822z">
+                            <GeometryDrawing.Brush>
+                                <SolidColorBrush Opacity="0.8" Color="Transparent" />
+                            </GeometryDrawing.Brush>
+                            <GeometryDrawing.Pen>
+                                <Pen
+                                  EndLineCap="Round" LineJoin="Round" StartLineCap="Round"
+                                  Thickness="5">
+                                    <Pen.Brush>
+                                        <SolidColorBrush Opacity="0.8" Color="#FF000000" />
+                                    </Pen.Brush>
+                                </Pen>
+                            </GeometryDrawing.Pen>
+                        </GeometryDrawing>
+                    </DrawingGroup>
+                </DrawingGroup>
+            </DrawingImage.Drawing>
+        </DrawingImage>
+
+        <implanttemplate:IsFavoriteConverter x:Key="StartVisibleConverter" />
+        <implanttemplate:IsSelectedConverter x:Key="BorderColorConverter" />
+    </UserControl.Resources>
+
+    <Border
+      Width="100" Height="120" Margin="0,0,20,0"
+      Padding="5" Background="#01000000"
+      BorderBrush="{Binding IsSelected, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource BorderColorConverter}}"
+      BorderThickness="2" MouseLeftButtonUp="Border_MouseLeftButtonUp">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition Height="28" />
+            </Grid.RowDefinitions>
+
+            <ContentControl
+              Height="16" HorizontalAlignment="Right" VerticalAlignment="Top"
+              Panel.ZIndex="2">
+                <Grid>
+                    <Image x:Name="imageNoFavorite" Source="{StaticResource ensarija_HollowStar_soft_edgesDrawingImage}" MouseLeftButtonUp="Image_MouseLeftButtonUp" />
+                    <Image
+                      x:Name="imageFavorite"
+                      Source="{StaticResource ensarija_Star_soft_edgesDrawingImage}"
+                      Visibility="{Binding IsFavorite, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource StartVisibleConverter}}"
+                      Panel.ZIndex="2" MouseLeftButtonUp="Image_MouseLeftButtonUp" />
+                </Grid>
+            </ContentControl>
+            <ContentControl>
+                <Ellipse Width="60" Height="60" Fill="Red" />
+            </ContentControl>
+
+            <TextBlock
+              Grid.Row="1" HorizontalAlignment="Center" FontSize="18"
+              FontWeight="Bold"
+              Text="{Binding Text, UpdateSourceTrigger=PropertyChanged}"
+              TextWrapping="Wrap" />
+        </Grid>
+    </Border>
+</UserControl>

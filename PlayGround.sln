@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33122.133
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImplantTemplate", "ImplantTemplate\ImplantTemplate.csproj", "{A49607EA-BDAD-4AB4-8D05-C40C2CEA9270}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FixtureJsonGenerator", "FixtureJsonGenerator\FixtureJsonGenerator.csproj", "{C8C14E98-F23F-4C17-85EB-C80B63CBFC27}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A49607EA-BDAD-4AB4-8D05-C40C2CEA9270}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A49607EA-BDAD-4AB4-8D05-C40C2CEA9270}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A49607EA-BDAD-4AB4-8D05-C40C2CEA9270}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A49607EA-BDAD-4AB4-8D05-C40C2CEA9270}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C8C14E98-F23F-4C17-85EB-C80B63CBFC27}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C8C14E98-F23F-4C17-85EB-C80B63CBFC27}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C8C14E98-F23F-4C17-85EB-C80B63CBFC27}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C8C14E98-F23F-4C17-85EB-C80B63CBFC27}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5E2B1CB1-7161-4225-BCA5-323341EFD4A3}
+	EndGlobalSection
+EndGlobal

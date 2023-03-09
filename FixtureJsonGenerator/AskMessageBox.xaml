@@ -1,0 +1,23 @@
+﻿<Window
+  x:Class="FixtureJsonGenerator.AskMessageBox" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+  xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:local="clr-namespace:FixtureJsonGenerator" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+  Width="600" Height="350" ShowInTaskbar="False"
+  WindowStartupLocation="CenterOwner" mc:Ignorable="d">
+    <StackPanel Orientation="Vertical">
+        <Label
+          x:Name="labelHeader" Margin="10,30,0,0" HorizontalAlignment="Left"
+          Content="New Implant System Name:" FontSize="24" />
+        <TextBox
+          Height="32" x:Name="textBoxMain" Margin="10"
+          FontSize="26" />
+        <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
+            <Button
+              Width="120" Height="60" x:Name="buttonOK"
+              Click="Button_Click" Content="OK" FontSize="32" />
+            <Button
+              Width="120" Height="60" x:Name="buttonCancel"
+              Margin="30,0,0,0" Click="Button_Click" Content="Cancel"
+              FontSize="32" />
+        </StackPanel>
+    </StackPanel>
+</Window>
